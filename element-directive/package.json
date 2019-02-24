@@ -1,0 +1,20 @@
+{
+  "name": "directives",
+  "version": "0.1.0",
+  "description": "Directives",
+  "main": "server.js",
+  "scripts": {
+    "build": "./node_modules/.bin/browserify ./project/app/index.js -o ./project/dist/index.js",
+    "start": "./node_modules/nodemon/bin/nodemon.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eli",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "browserify": "^16.2.3",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.9",
+    "npm": "^6.7.0"
+  }
+}

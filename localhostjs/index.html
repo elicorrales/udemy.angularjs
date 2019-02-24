@@ -1,0 +1,302 @@
+<html>
+<head>
+  <title>Forms Documentation App</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script type="text/javascript" src="./app/js/app.module.js"></script>
+  <script type="text/javascript" src="./app/js/main-controller.js"></script>
+  <script type="text/javascript" src="./app/js/second-controller.js"></script>
+</head>
+<body ng-app="app" ng-controller="mainController">
+  <h2 class="text-center">Documentation of Forms</h2>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      <!--form state-->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>form state</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+              <div>
+                <p><strong>form state</strong> blah blah blah</p>
+                <form name="myForm3">
+                  <p><input type="text" name="requiredField" ng-model="requiredField" required ng-blur="blurred3()"/></p>
+                  <p><input type="text" name="notRequiredField" ng-model="notRequiredField"/></p>
+                  <ul>
+                    <li>$valid</li>
+                    <li>$invalid</li>
+                    <li>$dirty</li>
+                    <li>$pristine</li>
+                    <li>$touched</li>
+                    <li>$untouched</li>
+                  </ul>
+                  <input type="submit" value="Submit" class="btn btn-success"/>
+                </form>
+                <div>valid: {{myForm3.$valid}}</div>
+                <div>invaid:{{myForm3.$invalid}}</div>
+                <div>dirty: {{myForm3.$dirty}}</div>
+                <div>pristin:{{myForm3.$pristine}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!--input state-->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>input state</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+              <div>
+                <p><strong>input state</strong> blah blah blah</p>
+                <form name="myForm2">
+                  <p><input type="text" name="requiredField" ng-model="requiredField" required ng-blur="blurred2()"/></p>
+                  <p><input type="text" name="notRequiredField" ng-model="notRequiredField"/></p>
+                  <ul>
+                    <li>$valid</li>
+                    <li>$invalid</li>
+                    <li>$dirty</li>
+                    <li>$pristine</li>
+                    <li>$touched</li>
+                    <li>$untouched</li>
+                  </ul>
+                  <input type="submit" value="Submit" class="btn btn-success"/>
+                </form>
+                <div>valid: {{myForm2.requiredField.$valid}}</div>
+                <div>invaid:{{myForm2.requiredField.$invalid}}</div>
+                <div>dirty: {{myForm2.requiredField.$dirty}}</div>
+                <div>pristin:{{myForm2.requiredField.$pristine}}</div>
+                <div>touched:{{myForm2.requiredField.$touched}}</div>
+                <div>untouch:{{myForm2.requiredField.$untouched}}</div>
+                <div class="alert alert-danger" ng-if="!myForm2.requiredField.$valid && isBlurred2">Is Required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <!--using required and $valid-->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>using required and $valid</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+              <div>
+                <p><strong>using required and $valid</strong> blah blah blah</p>
+                <form name="myForm">
+                  <p><input type="text" name="requiredTest" ng-model="requiredTest" required ng-blur="blurred()"/></p>
+                  <p><input type="text" name="notRequiredTest" ng-model="notRequiredTest"/></p>
+                  <input type="submit" value="Submit" class="btn btn-success"/>
+                </form>
+                <div class="alert alert-danger" ng-if="!myForm.requiredTest.$valid && isBlurred">Is Required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <!--select-default -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>select-default</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+              <div>
+                <p><strong>select-default</strong> blah blah blah</p>
+                <p>
+                  <label for="dropdown1d">dropdown1:</label>
+                  <select id="dropdown1d" ng-model="dropdown1d.default" >
+                    <option value="1">This is 1</option>
+                    <option value="2">This is 2</option>
+                    <option value="3">This is 3</option>
+                    <option value="" selected disabled hidden>Choose</option>
+                  </select>
+                </p>
+                {{dropdown1d}}
+                <p>
+                  <label for="dropdown2d">dropdown2d:</label>
+                  <select id="dropdown2d" ng-model="dropdown2d.default" ng-options="o.value for o in options3">
+                  </select>
+                </p>
+                <p>{{dropdown2d}}</p>
+                <p>{{options2d}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!--ng-options -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-options</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+              <div>
+                <p><strong>ng-options</strong> blah blah blah</p>
+                <p>
+                  <label for="dropdown1">dropdown1:</label>
+                  <select id="dropdown1" ng-model="dropdown1" >
+                    <option value="1">This is 1</option>
+                    <option value="2">This is 2</option>
+                    <option value="3">This is 3</option>
+                    <option value=""> </option>
+                  </select>
+                </p>
+                {{dropdown1}}
+                <p>
+                  <label for="dropdown2">dropdown1:</label>
+                  <select id="dropdown2" ng-model="dropdown2" ng-options="o.value for o in options2">
+                  </select>
+                </p>
+                <p>{{dropdown2}}</p>
+                <p>{{options2}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!--checkboxes -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>checkboxes</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+              <div>
+                <p><strong>checkboxes</strong> blah blah blah</p>
+                <p><label for="cb1">True|False:</label><input id="cb1" type="checkbox" ng-model="checkboxes.cb1" ng-true-value="'True'" ng-false-value="'False'"/></p>
+                <p><label for="cb2">Yes|No:</label><input id="cb2" type="checkbox" ng-model="checkboxes.cb2" ng-true-value="'Yes'" ng-false-value="'No'"/></p>
+                <p><label for="cb3">Go|NoGo:</label><input id="cb3" type="checkbox" ng-model="checkboxes.cb3" ng-true-value="'Go'" ng-false-value="'NoGo'"/></p>
+                <p>{{checkboxes}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!--ng-submit -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-submit</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+              <div>
+                <form ng-submit="validateForm()">
+                  <p><label for="name">Name:</label><input id="name" type="text" ng-model="formSubmit.name"/></p>
+                  <p><label for="id">Id:</label><input id="id" type="text" ng-model="formSubmit.id" /></p>
+                  <p><strong>ng-submit</strong> blah blah blah</p>
+                  <p>{{formSubmit}}</p>
+                  <input type="submit" value="Submit" class="btn btn-success"/>
+                  <div class="alert alert-danger" ng-show="formSubmit.error">{{formSubmit.error}}</div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!--ng-form -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-form</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+              <div>
+                <p><input type="text" ng-model="form.carType" ng-disabled="form.disableName"/>
+                  <p><input type="checkbox" ng-model="form.hasTurbo" />Has Turbo</p>
+                  <p><input type="checkbox" ng-model="form.disableName" />Name Disabled</p>
+                  <p><input type="checkbox" ng-disabled="formDisabled.formDisabled" />All Disabled</p>
+                  <p><strong>ng-form</strong> blah blah blah</p>
+                  <p>{{form}}</p>
+                  <p>{{formDisabled}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!--ng-class -->
+        <div class="panel panel-info">
+          <div class="panel-heading"><h2>ng-model</h2></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-md-offset-1">
+                <br>
+                <div>
+                  <p><input type="checkbox" ng-model="isClass1" ng-click="doClick1()"/>Click to Change</p>
+                  <p><input type="checkbox" ng-model="isClass2" ng-click="doClick2()"/>Click to Change</p>
+                  <p><input type="text" ng-model="isText" ng-change="doText()"/>
+                    <p><strong>ng-model</strong> seems to have two-way databinding. from controller to ui, and from ui to controller</p>
+                    <div ng-class="{'alert-light':!isClass1,'alert-success':isClass1}">aba;lsdfja;sdlfja</div>
+                    <div ng-class="{'alert-light':isClass1,'alert-danger':isClass1}">aba;lsdfja;sdlfja</div>
+                    <div ng-class="{'alert-light':!isClass2,'label-primary':isClass2}">aba;lsdfja;sdlfja</div>
+                    <div ng-class="{'alert-light':isClass2,'label-info':isClass2}">aba;lsdfja;sdlfja</div>
+                    {{isClass1}} {{isClass2}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+          <!--
+          <div ng-controller="mainController">
+          <h1 class='text-center'>{{controllerName}}</h1>
+          <input type='text' ng-model='car' ng-change='selectCar()'/>
+          <div>Message is {{message}}</div>
+        </div>
+        <hr>
+        <div ng-controller="secondController">
+        <h1 class='text-center'>{{controllerName}}</h1>
+        <input type='text' ng-model='car' ng-change='selectCar()'/>
+        <div>Message is {{message}}</div>
+      </div>
+    -->
+  </div>
+</div>
+</body>
+</html>

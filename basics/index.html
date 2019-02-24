@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>Basic Application</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script type="text/javascript" src="./app/app.js"></script>
+</head>
+<body ng-app="app">
+  <div>
+    {{1 + 3}}
+  </div>
+  <div ng-controller="controller1">
+    {{name}}
+  </div>
+  <div ng-controller="controller2">
+    {{name}}
+
+    <table class="table table-striped">
+      <tr>
+        <th>NAME</th>
+        <th>LAST</th>
+      </tr>
+      <tr ng-repeat="user in users">
+        <td>{{user.name}}</td>
+        <td>{{user.lname}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    app.controller("controller1",function($scope) {
+      $scope.name = "controller1";
+    });
+    app.controller("controller2",function($scope) {
+      $scope.name = "controller2";
+      var users = [
+        {name:"Bane1",lname:"Uasdf"},
+        {name:"SDadf",lname:"dafef"},
+        {name:"Asdf",lname:"adfa"}
+      ];
+      $scope.users = users;
+    });
+  </script>
+</body>
+</html>

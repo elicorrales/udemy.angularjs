@@ -1,0 +1,87 @@
+<html>
+<head>
+  <title>Documentation of Directives</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script type="text/javascript" src="./dist/index.js"></script>
+</head>
+<body ng-app="app" ng-controller="filtersController">
+  <h2 class="text-center">Filters Documentation</h2>
+
+
+  <div class="row">
+    <div class="col-md-3 ">
+      <document-section data-title="Using Filter in Controller (JS)">
+        <p>Raw  : {{rawName}}</p>
+        <p>Uppr : {{upper}}</p>
+        <p>Lowr : {{lower}}</p>
+      </document-section>
+      <document-section data-title="Using Filter in HTML directly">
+        <p>Raw  : {{rawName}}</p>
+        <p>Uppr : {{rawName | uppercase}}</p>
+        <p>Lowr : {{rawName | lowercase}}</p>
+      </document-section>
+      <document-section data-title="Using Filter With Numbers">
+        <p>Raw  : {{amount}}</p>
+        <p>Uppr : {{amount | currency:'$':2}}</p>
+      </document-section>
+    </div>
+    <div class="col-md-4 ">
+      <document-section data-title="Searching Through Array">
+        <p><input type="text" ng-model="whatFilter" /></p>
+        <div class="col-md-4" >Raw  :
+            <div ng-repeat="d in data">{{d.name}} , {{d.state}}</div>
+        </div>
+        <div class="col-md-4" >All  :
+            <div ng-repeat="d in data | filter: whatFilter">{{d.name}} , {{d.state}}</div>
+        </div>
+      </document-section>
+      <document-section data-title="Searching Through Array">
+        <p><input type="text" ng-model="whatFilter.name" /></p>
+        <div class="col-md-4" >Raw  :
+            <div ng-repeat="d in data">{{d.name}} , {{d.state}}</div>
+        </div>
+        <div class="col-md-4" >Name  :
+            <div ng-repeat="d in data | filter: whatFilter">{{d.name}} , {{d.state}}</div>
+        </div>
+      </document-section>
+    </div>
+    <div class="col-md-4 ">
+      <document-section data-title="Searching Through Array">
+        <p><input type="text" ng-model="whatFilter.state" /></p>
+        <div class="col-md-4" >Raw  :
+            <div ng-repeat="d in data">{{d.name}} , {{d.state}}</div>
+        </div>
+        <div class="col-md-4" >State  :
+            <div ng-repeat="d in data | filter: whatFilter">{{d.name}} , {{d.state}}</div>
+        </div>
+      </document-section>
+      <document-section data-title="Sort Array">
+        <p><input type="text" ng-model="sortField" /></p>
+        <div class="col-md-4" >Raw  :
+            <div ng-repeat="d in data">{{d.name}} , {{d.state}}</div>
+        </div>
+        <div class="col-md-4" >Sorted  :
+            <div ng-repeat="d in data | orderBy: sortField">{{d.name}} , {{d.state}}</div>
+        </div>
+      </document-section>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 ">
+      <document-section data-title="Custom Filter ">
+        <p><input type="text" ng-model="sortField" /></p>
+        <div class="col-md-4" >Raw  :
+            <div ng-repeat="d in data">{{d.id}} , {{d.name}} , {{d.state}}</div>
+        </div>
+        <div class="col-md-5" >Internal  :
+            <div ng-repeat="d in data ">{{d.id | internalId}}, {{d.name}} , {{d.state}}</div>
+        </div>
+      </document-section>
+    </div>
+  </div>
+
+</body>
+</html>

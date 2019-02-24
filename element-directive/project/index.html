@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title>Documentation of Directives</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script type="text/javascript" src="./dist/index.js"></script>
+</head>
+<body ng-app="app" ng-controller="formsController">
+  <h2 class="text-center">Element Directive</h2>
+
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      <!-- element directive -->
+      <document-section data-title="Simple Element Directive">
+        <element-test></element-test>
+      </document-section>
+
+      <!-- attribute directive -->
+      <document-section data-title="Simple Attribute Directive Used as Element (Wrong)">
+        ==> &nbsp;<attribute-test></attribute-test>&nbsp; <===blank <!-- this looks blank in browser because an attribute is not an element -->
+      </document-section>
+
+      <!-- attribute directive -->
+      <document-section data-title="Simple Attribute Directive Used within an Element such as <span> (Right)">
+        <span attribute-test></span>
+      </document-section>
+
+      <!-- class directive -->
+      <document-section data-title="Simple Class Directive Used as an Element> (Wrong)">
+        ==> &nbsp;<class-test></class-test>&nbsp; <===blank <!-- this looks blank in browser because a class is not an element -->
+      </document-section>
+
+      <!-- class directive -->
+      <document-section data-title="Simple Class Directive Used within an Element such as <span class=> (Right)">
+        <span class='class-test'></span>
+      </document-section>
+
+      <!-- comment directive -->
+      <document-section data-title="Simple Comment Directive Used as an Element> (Wrong)">
+        ==> &nbsp;<comment-test></comment-test>&nbsp; <===blank <!-- this looks blank in browser because a comment is not an element -->
+      </document-section>
+
+      <!-- comment directive-->
+      <document-section data-title="Simple Comment Directive (Right)">
+        <!--comment-test-->
+      </document-section>
+
+
+      <document-section data-title="Simple Template Test">
+        <template-test></template-test>
+      </document-section>
+
+      <document-section data-title="Simple Template Test">
+        <template-url-test></template-url-test>
+      </document-section>
+
+      <document-section data-title="Simple Controller Scope Test (Element)">
+        <controller-scope></controller-scope>
+      </document-section>
+
+      <document-section data-title="Simple Controller Scope Test (Attribute)">
+        <span controller-scope></span>
+      </document-section>
+
+      <document-section data-title="Simple Attribute Scope Test (as Element)">
+        <attribute-scope form="checkboxes.cb3" myownvar="checkboxes.cb3" yomama="options3[0]"></attribute-scope>
+      </document-section>
+
+      <document-section data-title="Simple Isolated Scope Test (Attribute)">
+        <span isolated-scope></span> <!-- we created 'isolated-scope' directive,as attribute type -->
+        <span data-isolated-scope></span> <!-- interesting that we can prepend the 'data-' to our own attribute directive -->
+      </document-section>
+
+    </div>
+  </div>
+</body>
+</html>

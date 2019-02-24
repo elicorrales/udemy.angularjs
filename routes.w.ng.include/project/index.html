@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>Routes With NG-INCLUDE</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+-->
+  <script type="text/javascript" src="./dist/index.js"></script>
+</head>
+<body ng-app="app" >
+  <h2 class="text-center">Routes With NG-INCLUDE</h2>
+
+  <div ng-include="'./app/templates/main-menu.html'"></div>
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      what is 10 * 20 ?  ==> {{10 * 20}}
+
+      <div ui-view></div>
+      <ui-view></ui-view>
+    </div>
+  </div>
+</body>
+</html>

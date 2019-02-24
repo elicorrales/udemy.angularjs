@@ -1,0 +1,26 @@
+<div class="row" style="min-height:30px;">
+</div>
+<div class="row">
+    <nav class="nav navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" ui-sref="view">Blogular</a>
+                <ul class="nav navbar-nav">
+                    <!---the ui-sref="view" will cause view.html content to be show further down-->
+                    <li class="active"><a ui-sref="view">View</a></li>
+                    <li><a ui-sref="profile">Profile</a></li>
+                    <li><a ui-sref="entries">Entries</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="row" style="min-height:20px;"> </div>
+
+<!--when user clicks on 'View' above, the routing code in app.js is supposed to load view.html,
+but how?where? That's what this below is for.-->
+<div class="container" style="background-color:#ffffff; min-height:700px;">
+    <div class="col-md-12"><br /></div>
+    <div class="col-md-12" ui-view><br /></div> <!--   <== this is where view.html will dropped in -->
+</div>

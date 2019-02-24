@@ -1,0 +1,35 @@
+<div class="col-md-11 col-md-offset-1">
+    <div class="page-header">
+        <h3>{{post.title}}
+            <br />
+            <small>{{post.subtitle}}</small></h3>
+    </div>
+    <p>{{post.content}}</p>
+    <hr/>
+    <div class="row">
+        <div class="col-md-11">
+            <form name="msgForm">
+            <div class="form-inline">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="msgContent" placeholder="Add comment to post" aria-describedby="basic-addon1" required>
+                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                    </div>
+                </div>
+                <button class="btn btn-success" ng-click="addMessage()" ng-disabled="msgForm.$invalid">Send</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    <div class="row" ng-repeat="msg in post.messages">
+        <div class="col-md-11">
+            <p>
+                <small>
+                    {{msg.message}}<br />
+                    <small><i>--Added by {{msg.author}}</i></small>
+                </small>
+            </p>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,180 @@
+<html>
+<head>
+  <title>Documentation App</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script type="text/javascript" src="./app/js/app.js"></script>
+  <script type="text/javascript" src="./app/js/main-controller.js"></script>
+</head>
+<body ng-app="app" ng-controller="mainController">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      <!--ng-click -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-click</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+              <div>
+                <p><input type="button" class="btn btn-danger" value="click me" ng-click="showAlert('click me button')"/></p>
+                <p><strong>ng-click</strong> gets triggered when button is clicked</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--ng-change -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-change</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+                <p><strong>ng-change</strong> gets triggered when dropdown or input field is changed, or checkboxes, or radio buttons</p>
+                <p><select class="form-control" ng-model="valueSelected" ng-change="showAlert('selected')">
+                  <option value="valisfasdf 1" >1nxcbsvbs</option>
+                  <option value="2">2534t3t3</option>
+                  <option value="3">ae52fh35</option>
+                  <option value="4">asdfsd</option>
+                </select></p>
+                <p><input type="text" ng-model="textChanged" ng-change="showAlert('input changed')"/></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--ng-change -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-change</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+                <p><strong>ng-change</strong> gets triggered when dropdown or input field is changed, or checkboxes, or radio buttons</p>
+                <p><select class="form-control" ng-model="valueSelected" ng-change="showAlert('selected')">
+                  <option value="valisfasdf 1" >1nxcbsvbs</option>
+                  <option value="2">2534t3t3</option>
+                  <option value="3">ae52fh35</option>
+                  <option value="4">asdfsd</option>
+                </select></p>
+                <p><input type="text" ng-model="textChanged" ng-change="showAlert('input changed')"/></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--ng-focus -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-focus</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+                <p><strong>ng-focus</strong> gets triggered when using tab key or mouse click</p>
+                <p>{{focusObj.dropdown}}</p>
+                <p><select class="form-control" ng-focus="markFocused('dropdown')">
+                  <option value="valisfasdf 1" >1nxcbsvbs</option>
+                  <option value="2">2534t3t3</option>
+                  <option value="3">ae52fh35</option>
+                  <option value="4">asdfsd</option>
+                </select></p>
+                <p>{{focusObj.input}}</p>
+                <p><input type="text" ng-focus="markFocused('input')"/></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--ng-blur -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-blur</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+                <p><strong>ng-blur</strong> gets triggered when using tab key or mouse click AWAY from a component</p>
+                <p>{{focusObj.dropdown}}</p>
+                <p><select class="form-control" ng-blur="markBlurred('dropdown')">
+                  <option value="valisfasdf 1" >1nxcbsvbs</option>
+                  <option value="2">2534t3t3</option>
+                  <option value="3">ae52fh35</option>
+                  <option value="4">asdfsd</option>
+                </select></p>
+                <p>{{focusObj.input}}</p>
+                <p><input type="text" class="form-control" ng-blur="markBlurred('input')"/></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--ng-copy -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-copy</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+                <p><strong>ng-copy</strong> gets triggered when user tries to copy text using CTRL-C or mouse right-click</p>
+                <p><input type="text" class="form-control" ng-copy="showAlert(' NG-COPY ')"/></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--ng-cut -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-cut</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+                <p><strong>ng-cut</strong> gets triggered when user tries to copy text using CTRL-C or mouse right-click</p>
+                <p><input type="text" class="form-control" ng-cut="showAlert(' NG-CUT ')"/></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--ng-paste -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-paste</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+                <p><strong>ng-paste</strong> gets triggered when user tries to copy text using CTRL-V or mouse right-click</p>
+                <p><input type="text" class="form-control" ng-paste="showAlert(' NG-PASTE ')"/></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--ng-dbclick -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-dbclick</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+                <p><strong>ng-paste</strong> gets triggered when user  mouse double-click</p>
+                <p><input type="button" class="btn btn-primary" value="click me" ng-dblclick="showAlert(' NG-DBLCLICK')"/></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</body>
+</html>

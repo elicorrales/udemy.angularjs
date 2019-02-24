@@ -1,0 +1,109 @@
+<html>
+<head>
+  <title>Documentation App</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script type="text/javascript" src="./app/js/app.module.js"></script>
+  <script type="text/javascript" src="./app/js/main-controller.js"></script>
+</head>
+<body ng-app="app" ng-controller="mainController">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      <!--ng-if -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-if</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+              <div>
+                <p><input type="button" class="btn btn-danger" value="Toggle" ng-click="toggleNgIf()"/></p>
+                <p><input type="checkbox" ng-model="ngIf"/>Click to Change</p>
+                <p><strong>ng-if</strong>can show or hide elements based on boolean value of some variable</p>
+                <p ng-if="!ngIf" class="alert-light">aba;lsdfja;sdlfja</p>
+                <p ng-if="ngIf" class="alert-success">aba;lsdfja;sdlfja</p>
+                <p ng-if="ngIf" class="alert-light">aba;lsdfja;sdlfja</p>
+                <p ng-if="!ngIf" class="alert-danger">aba;lsdfja;sdlfja</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--ng-hide -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-hide</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+              <div>
+                <p><input type="button" class="btn btn-danger" value="Toggle" ng-click="toggleIsHidden()"/></p>
+                <p><input type="checkbox" ng-model="isHidden"/>Click to Change</p>
+                <p><strong>ng-hide</strong>can show or hide elements based on boolean value of some variable</p>
+                <p ng-hide="!isHidden" class="alert-light">aba;lsdfja;sdlfja</p>
+                <p ng-hide="isHidden" class="alert-success">aba;lsdfja;sdlfja</p>
+                <p ng-hide="isHidden" class="alert-light">aba;lsdfja;sdlfja</p>
+                <p ng-hide="!isHidden" class="alert-danger">aba;lsdfja;sdlfja</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--ng-show -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-show</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+              <div>
+                <p><input type="button" class="btn btn-danger" value="Toggle" ng-click="toggleIsHidden()"/></p>
+                <p><input type="checkbox" ng-model="isHidden"/>Click to Change</p>
+                <p><strong>ng-show</strong>can show or hide elements based on boolean value of some variable</p>
+                <p ng-show="!isHidden" class="alert-light">aba;lsdfja;sdlfja</p>
+                <p ng-show="isHidden" class="alert-success">aba;lsdfja;sdlfja</p>
+                <p ng-show="isHidden" class="alert-light">aba;lsdfja;sdlfja</p>
+                <p ng-show="!isHidden" class="alert-danger">aba;lsdfja;sdlfja</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--ng-class -->
+      <div class="panel panel-info">
+        <div class="panel-heading"><h2>ng-class</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+              <br>
+              <div>
+                <p><input type="checkbox" ng-model="isClass1"/>Click to Change</p>
+                <p><input type="checkbox" ng-model="isClass2"/>Click to Change</p>
+                <p><strong>ng-class</strong>changes class of elements based on boolean value of some variable</p>
+                <div ng-class="{'alert-light':!isClass1,'alert-success':isClass1}">aba;lsdfja;sdlfja</div>
+                <div ng-class="{'alert-light':isClass1,'alert-danger':isClass1}">aba;lsdfja;sdlfja</div>
+                <div ng-class="{'alert-light':!isClass2,'label-primary':isClass2}">aba;lsdfja;sdlfja</div>
+                <div ng-class="{'alert-light':isClass2,'label-info':isClass2}">aba;lsdfja;sdlfja</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+  </div>
+
+</body>
+</html>

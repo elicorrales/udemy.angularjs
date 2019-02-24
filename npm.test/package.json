@@ -1,0 +1,17 @@
+{
+  "name": "npm.test",
+  "version": "0.1.0",
+  "description": "Simple Application To Learn About NPM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eli",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "d3-chart": "0.0.1"
+  }
+}

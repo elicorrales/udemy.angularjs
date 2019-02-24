@@ -1,0 +1,15 @@
+<div class="jumbotron"><h1>{{title}} at {{currentMenu}}<h1></div>
+
+  <div class="row">
+    <div class="col-md-3 alert alert-info">
+      <h2>Side Menu</h2>
+      <div class="list-group">
+        <a ui-sref="dashboard.api" class="list-group-item" ng-class="{'active':currentMenu==='api'}" ng-click="changeMenu('api')">API</a>
+        <a ui-sref="dashboard.time" class="list-group-item" ng-class="{'active':currentMenu==='time'}"  ng-click="changeMenu('time')">TIME</a>
+        <a class="list-group-item" ng-click="callHome()">Go Home</a>
+      </div>
+    </div>
+    <div class="col-md-9 alert alert-warning">
+      <h2>Content</h2>
+      <div ui-view="content"></div>
+    </div>

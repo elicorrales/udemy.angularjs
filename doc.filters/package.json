@@ -1,0 +1,22 @@
+{
+  "name": "routes.w.side.menu",
+  "version": "0.1.0",
+  "description": "Routes With Side Menu",
+  "main": "server.js",
+  "scripts": {
+    "build": "browserify ./project/app/index.js -o ./project/dist/index.js",
+    "nodemon": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eli",
+  "license": "ISC",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.22",
+    "angular": "^1.5.8",
+    "body-parser": "^1.18.3",
+    "browserify": "^16.2.3",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.9",
+    "npm": "^6.7.0"
+  }
+}

@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>Documentation App</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script type="text/javascript" src="./app/js/app.module.js"></script>
+  <script type="text/javascript" src="./app/js/main-car-service.js"></script>
+  <script type="text/javascript" src="./app/js/main-controller.js"></script>
+  <script type="text/javascript" src="./app/js/second-car-service.js"></script>
+  <script type="text/javascript" src="./app/js/second-controller.js"></script>
+</head>
+<body ng-app="app">
+  <div ng-controller="mainController">
+    <h1 class='text-center'>{{controllerName}}</h1>
+    <input type='text' ng-model='car' ng-change='selectCar()'/>
+    <div>Message is {{message}}</div>
+  </div>
+  <hr>
+  <div ng-controller="secondController">
+    <h1 class='text-center'>{{controllerName}}</h1>
+    <input type='text' ng-model='car' ng-change='selectCar()'/>
+    <div>Message is {{message}}</div>
+  </div>
+</body>
+</html>
